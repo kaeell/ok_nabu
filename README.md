@@ -5,12 +5,16 @@
 
 ## wm8960
 
+https://www.waveshare.com/wiki/WM8960_Audio_HAT
+
 tester les commandes arecord et aplay pour noter les paramètres corrects
 arecord -D hw:1,0 -f S16_LE -r 16000 -c 2 test.wav
 aplay -Dhw:1 test.wav
 
 ## wyoming satellites
-
+https://github.com/rhasspy/wyoming-satellite
+https://github.com/rhasspy/wyoming-satellite/blob/master/docs/tutorial_2mic.md
+https://github.com/rhasspy/wyoming-openwakeword/
 
 
 script/run  \
@@ -32,3 +36,5 @@ script/run \
 
 ## wyoming satellites enhanced
 
+
+https://github.com/FutureProofHomes/wyoming-enhancements/blob/master/snapcast/docs/4_modify_wyoming_satellite.md
