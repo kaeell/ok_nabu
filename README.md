@@ -18,17 +18,55 @@ sudo ./install.sh
 ```code bash
 sudo reboot
 ```
-
+```code bash
+sudo dkms status
+```
 tester les commandes arecord et aplay pour noter les paramètres corrects
-arecord -D hw:1,0 -f S16_LE -r 16000 -c 2 test.wav
-aplay -Dhw:1 test.wav
+arecord -D hw:0,0 -f S16_LE -r 16000 -c 2 test.wav
+aplay -Dhw:0 test.wav
 
 ## wyoming satellites
 https://github.com/rhasspy/wyoming-satellite
 https://github.com/rhasspy/wyoming-satellite/blob/master/docs/tutorial_2mic.md
 https://github.com/rhasspy/wyoming-openwakeword/
 
+```code bash
+sudo apt-get update
+sudo apt-get install --no-install-recommends  \
+  git \
+  python3-venv
+```
 
+```code bash
+git clone https://github.com/rhasspy/wyoming-satellite.git
+```
+
+pour système 64bits
+
+```code bash
+
+cd wyoming-satellite/
+python3 -m venv .venv
+.venv/bin/pip3 install --upgrade pip
+.venv/bin/pip3 install --upgrade wheel setuptools
+.venv/bin/pip3 install \
+  -f 'https://synesthesiam.github.io/prebuilt-apps/' \
+  -r requirements.txt \
+  -r requirements_audio_enhancement.txt \
+  -r requirements_vad.txt
+```
+pour système 32bits
+```code bash
+
+cd wyoming-satellite/
+python3 -m venv .venv
+.venv/bin/pip3 install --upgrade pip
+.venv/bin/pip3 install --upgrade wheel setuptools
+.venv/bin/pip3 install \
+  -f 'https://synesthesiam.github.io/prebuilt-apps/' \
+  -r requirements.txt \
+  -r requirements_audio_enhancement.txt \
+```
 script/run  \
 --name 'my satellite' \
 --uri 'tcp://0.0.0.0:10700'  \
