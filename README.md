@@ -2,10 +2,22 @@
 
 ## préparer rasp pi
 
+sudo apt update
+sudo apt upgrade
 
 ## wm8960
 
 https://www.waveshare.com/wiki/WM8960_Audio_HAT
+```code bash
+git clone https://github.com/waveshare/WM8960-Audio-HAT
+```
+```code bash
+cd WM8960-Audio-HAT
+sudo ./install.sh 
+```
+```code bash
+sudo reboot
+```
 
 tester les commandes arecord et aplay pour noter les paramètres corrects
 arecord -D hw:1,0 -f S16_LE -r 16000 -c 2 test.wav
