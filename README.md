@@ -68,11 +68,11 @@ python3 -m venv .venv
   -r requirements_audio_enhancement.txt \
 ```
 script/run  \
---name 'my satellite' \
+--name 'nabu' \
 --uri 'tcp://0.0.0.0:10700'  \
---mic-command 'arecord -D hw:1,0 -r 16000 -c 1 -f S16_LE -t raw'  \
---snd-command 'aplay -Dhw:1 -r 22050 -c 1 -f S16_LE -t raw' \
---wake-uri 'tcp://127.0.0.1:10400' \
+--mic-command 'arecord -D hw:0,0 -r 16000 -c 2 -f S16_LE -t raw'  \
+--snd-command 'aplay -Dhw:0 -r 22050 -c 1 -f S16_LE -t raw' \
+--wake-uri 'tcp://192.168.1.9:10400' \
 --wake-word-name 'ok_nabu' \
 --debug
 
